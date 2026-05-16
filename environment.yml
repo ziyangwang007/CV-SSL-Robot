@@ -1,0 +1,27 @@
+name: mac-s3robo
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - scipy
+  - h5py
+  - pillow
+  - tqdm
+  - scikit-image
+  - pip:
+      - torch>=1.10
+      - torchvision
+      - SimpleITK
+      - medpy
+      - yacs
+      - einops
+      - timm
+      - fvcore
+      - tensorboard
+      - tensorboardX
+      - opencv-python
+      - matplotlib
