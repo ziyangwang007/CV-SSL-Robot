@@ -1,9 +1,5 @@
 # CV-SSL-Robot
 
-Mamba-driven contrastive semi-supervised surgical robot segmentation for EndoVis-style HDF5 datasets.
-
-This repository combines the Semi-Mamba-UNet training idea with the surgical robotic H5 data pipeline from CV-WSL-Robot. The main method trains two Mamba-UNet branches, exchanges cross pseudo-labels on unlabelled frames, and adds a pixel-level contrastive loss over decoder features.
-
 
 ## Contact
 
@@ -70,6 +66,12 @@ cd mamba
 
 python setup.py install
 ```
+
+
+Download Pretrained Model
+
+Download through [Google Drive](https://drive.google.com/file/d/14RzbbBDjbKbgr0ordKlWbb69EFkHuplr/view?usp=sharing) for SwinUNet, and [[Google Drive]](https://drive.google.com/file/d/1uUPsr7XeqayCxlspqBHbg5zIWx0JYtSX/view?usp=sharing) for Mamba-UNet, and save in `../code/pretrained_ckpt`.
+
 
 
 ## Data format
@@ -212,4 +214,4 @@ python code/train_fully_supervised_mamba_robot.py \
 
 
 ## Acknowledgement
-SSL4MIS [Link](https://github.com/HiLab-git/SSL4MIS), Visual Mamba [Link](https://github.com/MzeroMiko/VMamba), CVSSLMIS [Link](https://github.com/ziyangwang007/CV-SSL-MIS), CVWSLRobot [Link](https://github.com/ziyangwang007/CV-WSL-Robot), MambaUNet [Link](https://github.com/ziyangwang007/Mamba-UNet).
+SSL4MIS [Link](https://github.com/HiLab-git/SSL4MIS), Visual Mamba [Link](https://github.com/MzeroMiko/VMamba), CVSSLMIS [Link](https://github.com/ziyangwang007/CV-SSL-MIS), CVWSLRobot [Link](https://github.com/ziyangwang007/CV-WSL-Robot), MambaUNet [Link](https://github.com/ziyangwang007/Mamba-UNet), Min_Max_Similarity [Link](https://github.com/AngeLouCN/Min_Max_Similarity).
