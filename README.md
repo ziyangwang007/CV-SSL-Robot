@@ -1,8 +1,15 @@
-# CV-SSL-Robot / MAC-S3Robo
+# CV-SSL-Robot
 
 Mamba-driven contrastive semi-supervised surgical robot segmentation for EndoVis-style HDF5 datasets.
 
 This repository combines the Semi-Mamba-UNet training idea with the surgical robotic H5 data pipeline from CV-WSL-Robot. The main method trains two Mamba-UNet branches, exchanges cross pseudo-labels on unlabelled frames, and adds a pixel-level contrastive loss over decoder features.
+
+
+## Contact
+
+ziyangwang [at] ieee [dot] org
+
+
 
 ## What is implemented
 
@@ -50,6 +57,20 @@ pip install -e third_party/mamba
 ```
 
 If local extension installation fails on your machine, try the matching wheel versions from `mamba-ssm` and `causal-conv1d` for your CUDA/PyTorch version.
+
+
+```shell
+cd casual-conv1d
+
+python setup.py install
+```
+
+```shell
+cd mamba
+
+python setup.py install
+```
+
 
 ## Data format
 
@@ -169,21 +190,6 @@ python code/train_fully_supervised_mamba_robot.py \
   --max_iterations 30000
 ```
 
-## GitHub publishing
-
-After unzipping this folder locally:
-
-```bash
-cd MAC-S3Robo
-git init
-git add .
-git commit -m "Initial MAC-S3Robo code release"
-git branch -M main
-
-# Create an empty repo on GitHub, then:
-git remote add origin git@github.com:ziyangwang007/CV-SSL-Robot.git
-git push -u origin main
-```
 
 ## Notes
 
@@ -192,3 +198,18 @@ git push -u origin main
 - The default config does not require a pretrained VMamba checkpoint. Add `--load_pretrained --pretrained_ckpt /path/to/vmamba_tiny_e292.pth` to use one.
 - For high-resolution inputs, reduce `--contrastive_pixels` or `--batch_size` if GPU memory is tight.
 
+
+## Reference
+```bibtex
+@article{zhan2025adversarial,
+  title={MAC-S3Robo: Mamba-Driven Contrastive Semi-Supervised Surgical Robot Segmentation for Minimally Invasive Surgery},
+  author={Zhang, Chengyi and Chen, Zhihao and Ge, Yiyuan and Guo, Zhihao and Wang, Ziyang},
+  journal={IEEE Open Journal of Signal Processing},
+  year={2026},
+  publisher={IEEE}
+}
+```
+
+
+## Acknowledgement
+SSL4MIS [Link](https://github.com/HiLab-git/SSL4MIS), Visual Mamba [Link](https://github.com/MzeroMiko/VMamba), CVSSLMIS [Link](https://github.com/ziyangwang007/CV-SSL-MIS), CVWSLRobot [Link](https://github.com/ziyangwang007/CV-WSL-Robot), MambaUNet [Link](https://github.com/ziyangwang007/Mamba-UNet).
